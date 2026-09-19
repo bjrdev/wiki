@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Wiki</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="white" data-font="sans" class="fixed-header">
+    
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="icon-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            <div class="logo">Wiki</div>
+        </div>
+        
+        <div class="topbar-center">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Wikipedia...">
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <div class="dropdown-container">
+                <button id="btn-lang" class="icon-btn" aria-label="Languages"><i class="fas fa-globe"></i></button>
+                <div id="menu-lang" class="dropdown-menu hidden">
+                    <div class="menu-lang-header">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Find language">
+                    </div>
+                    <ul class="lang-list">
+                        <li><a href="#" data-lang="en">English <span>(en)</span></a></li>
+                        <li><a href="#" data-lang="fr">Français <span>(fr)</span></a></li>
+                        <li><a href="#" data-lang="es">Español <span>(es)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown-container">
+                <button id="btn-appearance" class="icon-btn font-icon">Aa</button>
+                <div id="menu-appearance" class="dropdown-menu appearance-menu hidden">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-target="tab-theme">Theme</button>
+                        <button class="tab-btn" data-target="tab-settings">Settings</button>
+                    </div>
+                    
+                    <div id="tab-theme" class="tab-content active">
+                        <div class="font-family-selector">
+                            <button class="font-btn active" data-font-val="sans">
+                                <span class="font-label">Sans</span>
+                                <span class="font-preview" style="font-family: sans-serif;">Aa</span>
+                            </button>
+                            <button class="font-btn" data-font-val="serif">
+                                <span class="font-label">Serif</span>
+                                <span class="font-preview" style="font-family: serif;">Aa</span>
+                            </button>
+                        </div>
+                        
+                        <div class="color-selector">
+                            <button class="color-btn" data-color="white" style="background: #ffffff;"></button>
+                            <button class="color-btn" data-color="sepia" style="background: #f4ecd8;"></button>
+                            <button class="color-btn" data-color="gray" style="background: #404040;"></button>
+                            <button class="color-btn" data-color="darkslate" style="background: #202122;"></button>
+                            <button class="color-btn" data-color="black" style="background: #000000; border-color: #555;"></button>
+                        </div>
+
+                        <div class="slider-group">
+                            <span>A</span>
+                            <input type="range" id="slider-size" min="0.8" max="1.6" step="0.1" value="1">
+                            <span style="font-size: 1.2em;">A</span>
+                        </div>
+                        <div class="slider-group">
+                            <i class="fas fa-align-justify"></i>
+                            <input type="range" id="slider-height" min="1.2" max="2.0" step="0.1" value="1.6">
+                            <i class="fas fa-align-justify" style="font-size: 1.2em;"></i>
+                        </div>
+                    </div>
+
+                    <div id="tab-settings" class="tab-content hidden">
+                        <div class="setting-row">
+                            <span>Fixed Header</span>
+                            <label class="toggle"><input type="checkbox" id="toggle-header" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="setting-row">
+                            <span>Hide Article Links</span>
+                            <label class="toggle"><input type="checkbox" id="toggle-links"><span class="slider"></span></label>
+                        </div>
+                        <div class="setting-row">
+                            <span>Contents Bullet Points</span>
+                            <label class="toggle"><input type="checkbox" id="toggle-bullets"><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="contents-title">CONTENTS</div>
+            <nav class="toc">
+                <ul>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content-wrapper">
+            <div id="translation-warning" class="warning-banner hidden">
+                No translation available for this language, go to the <a href="#" id="fallback-link">English page</a>.
+            </div>
+
+            <article class="page-content">
+                <h1 id="welcome">Home</h1>
+                <p>Welcome to the main page. This text will change size but the interface around it will not. The <code>h1</code> and <code>h2</code> tags remain in Serif font.</p>
+                <p>Here is an <a href="#">example of a link</a> inside the article.</p>
+
+                <h2 id="features">Features</h2>
+                <p>Use the appearance menu on the top right to customize the theme.</p>
+            </article>
+        </main>
+    </div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
